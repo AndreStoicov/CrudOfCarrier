@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CrudOfCarrier.Models.Entities.CarrierRating>
+
+@{
+    ViewBag.Title = "Rate Carrier";
+}
+
+<div class="jumbotron">
+    <a href="../Home/Index">Back to Home</a>
+    <h2>Rated Carrier List</h2>
+
+    @foreach (var item in Model)
+    {
+        <p>Carrier Name: @item.Carrier.Name | Average Stars: @item.Stars</p>
+    }
+    
+    @if (ViewBag.UserLogged != null)
+    {
+        <a href="Rating/RateCarrier">Rate Carrier</a>
+    }
+</div>

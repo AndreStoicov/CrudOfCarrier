@@ -1,0 +1,34 @@
+﻿@model CrudOfCarrier.Models.Entities.CarrierRating
+
+@{
+    ViewBag.Title = "Rate Carrier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <a href="../Home/Index">Back to Home</a>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <fieldset>
+                <legend>Carrier List</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.Carrier.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Carrier.Name, ViewBag.carrierNames as IEnumerable<SelectListItem>)
+                    @Html.ValidationMessageFor(u => u.Carrier.Name)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.Stars)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(u => u.Stars)
+                    @Html.ValidationMessageFor(u => u.Stars)
+                </div>
+
+                <input type="submit" value="Rate Carrier" />
+            </fieldset>
+        </div>
+    }
+
+    </div>

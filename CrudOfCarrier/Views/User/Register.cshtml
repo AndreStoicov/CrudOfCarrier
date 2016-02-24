@@ -1,0 +1,33 @@
+﻿@model CrudOfCarrier.Models.Entities.User
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <a href="../Home/Index">Back to Home</a>
+    @using (Html.BeginForm())
+    {
+
+        <div>
+            <fieldset>
+                <legend>Register</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.UserName)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(u => u.UserName)
+                    @Html.ValidationMessageFor(u => u.UserName)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(u => u.Password)
+                    @Html.ValidationMessageFor(u => u.Password)
+                </div>
+
+                <input type="submit" value="Register" />
+            </fieldset>
+        </div>
+    }
+    </div>

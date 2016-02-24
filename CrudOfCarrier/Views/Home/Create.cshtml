@@ -1,0 +1,26 @@
+﻿@model CrudOfCarrier.Models.Entities.Carrier
+@{
+    ViewBag.Title = "Add new carrier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+
+        <div>
+            <fieldset>
+                <legend>Carrier</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(u => u.Name)
+                    @Html.ValidationMessageFor(u => u.Name)
+                </div>
+
+
+                <input type="submit" value="Create" />
+            </fieldset>
+        </div>
+    }
+    </div>
